@@ -5,6 +5,6 @@ export const theme = {
   },
   neutral: {
     black: "hsl(0, 0%, 0%)",
-    darkgGray: "hsl(0, 0%, 48%)",
+    darkGray: "hsl(0, 0%, 48%)",
   },
 };

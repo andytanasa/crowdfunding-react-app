@@ -2,10 +2,11 @@ import styled from "styled-components";
 export const StyledHeader = styled.header`
   width: 100%;
   max-width: 100%;
-  height: 500px;
-  border: 1px solid black;
+  height: 600px;
   background-color: red;
-  background: url("./images/image-hero-desktop.jpg") center/cover no-repeat;
+  background: url("./images/image-hero-desktop.jpg") no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
 `;
 
 export const StyledNav = styled.nav`

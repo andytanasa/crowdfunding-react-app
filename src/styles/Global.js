@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 
 body {
     font-family: 'Commissioner', sans-serif;
+    background-color: lightgray;
 }
 ul {
     list-style: none;
