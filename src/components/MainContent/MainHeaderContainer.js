@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   StyledMainHeaderContainer,
   StyledMainHeaderLogo,
@@ -8,11 +8,18 @@ import {
 import { StyledButton } from "../../styles/utils/ButtonStyled.styled";
 import { Flex } from "../../styles/utils/Flex";
 
-const MainHeaderContainer = () => {
-  const [isBooked, setIsBooked] = useState(false);
-  const onBooked = () => {
-    setIsBooked(!isBooked);
-    console.log(isBooked);
+const MainHeaderContainer = ({
+  onHandleBooked,
+  isBooked,
+  showModal,
+  onShowModal,
+}) => {
+  const onBooked = (isBooked) => {
+    onHandleBooked(!isBooked);
+    // console.log(isBooked);
+  };
+  const onHandleModal = (showModal) => {
+    onShowModal(!showModal);
   };
   return (
     <StyledMainHeaderContainer>
@@ -22,7 +29,9 @@ const MainHeaderContainer = () => {
         A beautiful & handcrafted monitor stand to reduce neck and eye strain.
       </StyledMainHeaderPara>
       <Flex>
-        <StyledButton variant="primary">Back this project</StyledButton>
+        <StyledButton variant="primary" onClick={onHandleModal}>
+          Back this project
+        </StyledButton>
         <StyledButton
           variant={isBooked ? "secondary" : "primary"}
           onClick={onBooked}
