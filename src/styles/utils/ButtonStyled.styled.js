@@ -30,6 +30,8 @@ export const StyledButton = styled.button`
     position: absolute;
     top: 0;
     left: 0;
+    background-color: red;
+    color: white;
   }
 
   ${({ theme, variant }) => variantStyles(theme, variant)}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyledMainHeaderContainer,
   StyledMainHeaderLogo,
@@ -9,6 +9,11 @@ import { StyledButton } from "../../styles/utils/ButtonStyled.styled";
 import { Flex } from "../../styles/utils/Flex";
 
 const MainHeaderContainer = () => {
+  const [isBooked, setIsBooked] = useState(false);
+  const onBooked = () => {
+    setIsBooked(!isBooked);
+    console.log(isBooked);
+  };
   return (
     <StyledMainHeaderContainer>
       <StyledMainHeaderLogo src="./images/logo-mastercraft.svg" alt="" />
@@ -18,9 +23,12 @@ const MainHeaderContainer = () => {
       </StyledMainHeaderPara>
       <Flex>
         <StyledButton variant="primary">Back this project</StyledButton>
-        <StyledButton variant="secondary">
+        <StyledButton
+          variant={isBooked ? "secondary" : "primary"}
+          onClick={onBooked}
+        >
           <img src="./images/icon-bookmark.svg" alt="bookmark icon" />
-          Bookmark
+          {isBooked ? "Bookmark" : "Bookmarked"}
         </StyledButton>
       </Flex>
     </StyledMainHeaderContainer>
